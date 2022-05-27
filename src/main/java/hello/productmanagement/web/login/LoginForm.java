@@ -1,17 +1,14 @@
-package hello.productmanagement.domain.member;
+package hello.productmanagement.web.login;
 
 import lombok.Data;
+
 import javax.validation.constraints.NotEmpty;
 
 @Data
-public class Member {
-    private Long id;
+public class LoginForm {
 
     @NotEmpty
     private String loginId;
     @NotEmpty
-    private String name;
-    @NotEmpty
     private String password;
-
 }

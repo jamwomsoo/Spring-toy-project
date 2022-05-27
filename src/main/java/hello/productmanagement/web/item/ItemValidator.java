@@ -1,4 +1,4 @@
-package hello.productmanagement.web;
+package hello.productmanagement.web.item;
 
 import hello.productmanagement.domain.item.Item;
 import org.springframework.stereotype.Component;
