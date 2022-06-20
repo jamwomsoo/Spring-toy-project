@@ -30,12 +30,12 @@
             </tr>
             </thead>
             <tbody>
-            <tr th:each="item : ${items}">
-            <tr th:each="item : ${items}">
-                <td><a href="item.html" th:href="@{/items/itemList/{itemId} (itemId=${item.id})}" th:text="${item.id}">회원id</a></td>
-                <td><a href="item.html" th:href="@{|/items/itemList/${item.id}|}" th:text="${item.itemName}">상품명</a></td>
-                <td th:text="${item.price}">10000</td>
-                <td th:text="${item.quantity}">10</td>
+            <tr th:each="itemForm : ${itemForms}">
+            <tr th:each="itemForm : ${itemForms}">
+                <td><a href="item.html" th:href="@{/items/itemList/{itemId} (itemId=${itemForm.itemId})}" th:text="${itemForm.itemId}">회원id</a></td>
+                <td><a href="item.html" th:href="@{|/items/itemList/${itemForm.itemId}|}" th:text="${itemForm.itemName}">상품명</a></td>
+                <td th:text="${itemForm.price}">10000</td>
+                <td th:text="${itemForm.quantity}">10</td>
             </tr>
             </tbody>
         </table>

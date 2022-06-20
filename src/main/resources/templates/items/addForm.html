@@ -19,7 +19,7 @@
     <div class="py-5 text-center">
         <h2 th:text="#{page.addItem}">상품 등록</h2>
     </div>
-    <form action="item.html" th:action th:object="${item}" method="post">
+    <form action="item.html" th:action method="post" th:object="${itemForm}" enctype="multipart/form-data">
         <div th:if="${#fields.hasGlobalErrors()}">
             <p class="field-error" th:each="err : ${#fields.globalErrors()}" th:text="${err}">글로벌 오류 메시지</p>
         </div>
@@ -49,6 +49,17 @@
             <div class="field-error" th:errors="*{quantity}">
                 수량 오류
             </div>
+        </div>
+        <div>
+            <label for="attachFile" th:text="#{label.item.attachFile}">첨부파일</label>
+            <input type="file" id="attachFile" th:field="*{attachFile}" class="form-control" name="attachFile" >
+        </div>
+        <div>
+            <label for="imageFiles" th:text="#{label.item.imageFiles}">이미지 파일들</label>
+            <input type="file" id="imageFiles" th:field="*{imageFiles}" class="form-control" multiple="multiple" name="imageFiles" >
+
+
+
         </div>
         <hr class="my-4">
         <div class="row">

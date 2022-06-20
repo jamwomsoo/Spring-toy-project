@@ -43,9 +43,9 @@ public class LogInterceptor implements HandlerInterceptor {
         String logId = (String) request.getAttribute(LOG_ID);
         log.info("AFTER REQUEST [{}][{}]", logId, requestURI);
         log.info("==========================================================================================");
+        log.info("ERROR = [{}]",ex);
         if(ex!=null){
             log.error("afterCompletion error!!",ex);
         }
     }
-
 }
